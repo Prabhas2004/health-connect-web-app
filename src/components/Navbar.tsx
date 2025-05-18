@@ -5,6 +5,13 @@ import { Menu } from "lucide-react";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  const scrollToAppointment = () => {
+    const appointmentSection = document.getElementById('book-appointment');
+    if (appointmentSection) {
+      appointmentSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <header className="sticky top-0 z-30 w-full border-b bg-white/80 backdrop-blur-sm">
@@ -28,7 +35,7 @@ export function Navbar() {
         
         <div className="hidden md:flex items-center gap-4">
           <Button variant="outline" size="sm">Sign In</Button>
-          <Button size="sm">Book Appointment</Button>
+          <Button size="sm" onClick={scrollToAppointment}>Book Appointment</Button>
         </div>
         
         <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -46,7 +53,7 @@ export function Navbar() {
             <a href="#" className="text-sm font-medium hover:text-medical-600 transition-colors py-2">Contact</a>
             <div className="flex flex-col gap-2 pt-2">
               <Button variant="outline" size="sm" className="w-full">Sign In</Button>
-              <Button size="sm" className="w-full">Book Appointment</Button>
+              <Button size="sm" className="w-full" onClick={scrollToAppointment}>Book Appointment</Button>
             </div>
           </div>
         </div>

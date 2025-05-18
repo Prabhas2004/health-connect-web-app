@@ -13,6 +13,23 @@ interface DoctorProps {
 }
 
 export function DoctorCard({ name, specialty, image, rating, reviews, availability }: DoctorProps) {
+  const handleBookAppointment = () => {
+    // Save doctor info to local storage
+    localStorage.setItem('selectedDoctor', JSON.stringify({ name, specialty }));
+    
+    // Scroll to appointment form
+    const appointmentSection = document.getElementById('book-appointment');
+    if (appointmentSection) {
+      appointmentSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // Dispatch event to notify AppointmentForm component
+    const event = new CustomEvent('doctorSelected', { 
+      detail: { name, specialty } 
+    });
+    window.dispatchEvent(event);
+  };
+
   return (
     <Card className="overflow-hidden border-none shadow-md hover:shadow-lg transition-all cursor-pointer">
       <div className="aspect-[3/4] bg-gray-100 relative">
@@ -37,7 +54,11 @@ export function DoctorCard({ name, specialty, image, rating, reviews, availabili
           <Button variant="outline" size="sm" className="text-xs border-medical-500 text-medical-500 hover:bg-medical-50">
             View Profile
           </Button>
-          <Button size="sm" className="text-xs bg-medical-500 hover:bg-medical-600">
+          <Button 
+            size="sm" 
+            className="text-xs bg-medical-500 hover:bg-medical-600"
+            onClick={handleBookAppointment}
+          >
             Book Now
           </Button>
         </div>

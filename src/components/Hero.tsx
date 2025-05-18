@@ -2,6 +2,13 @@
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
+  const scrollToAppointment = () => {
+    const appointmentSection = document.getElementById('book-appointment');
+    if (appointmentSection) {
+      appointmentSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative bg-gradient-to-b from-blue-50 to-white">
       <div className="container px-4 md:px-6 py-12 md:py-24 lg:py-32 flex flex-col md:flex-row items-center gap-8 md:gap-12">
@@ -13,7 +20,7 @@ export function Hero() {
             Schedule appointments with top doctors and receive quality healthcare services when and where you need them.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button className="bg-medical-500 hover:bg-medical-600" size="lg">
+            <Button className="bg-medical-500 hover:bg-medical-600" size="lg" onClick={scrollToAppointment}>
               Book an Appointment
             </Button>
             <Button variant="outline" size="lg" className="border-medical-500 text-medical-500 hover:bg-medical-50">
