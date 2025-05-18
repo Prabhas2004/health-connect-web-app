@@ -14,7 +14,7 @@ interface DoctorProps {
 
 export function DoctorCard({ name, specialty, image, rating, reviews, availability }: DoctorProps) {
   return (
-    <Card className="overflow-hidden border-none shadow-md hover:shadow-lg transition-all">
+    <Card className="overflow-hidden border-none shadow-md hover:shadow-lg transition-all cursor-pointer">
       <div className="aspect-[3/4] bg-gray-100 relative">
         {image ? (
           <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${image})` }}></div>
