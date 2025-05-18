@@ -1,27 +1,438 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HealthConnect - Doctor Appointment System</title>
-    <meta name="description" content="Schedule appointments with top doctors and receive quality healthcare services when and where you need them." />
-    <meta name="author" content="HealthConnect" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthConnect - Doctor Appointment System</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="#">
+          <span class="logo-icon">H</span>
+          <span class="logo-text">HealthConnect</span>
+        </a>
+      </div>
+      
+      <nav class="nav-links">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#doctors" class="nav-link">Doctors</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#" class="nav-link">About</a>
+        <a href="#" class="nav-link">Contact</a>
+      </nav>
+      
+      <div class="nav-buttons">
+        <button class="btn btn-outline">Sign In</button>
+        <button class="btn btn-primary" id="nav-book-btn">Book Appointment</button>
+      </div>
+      
+      <button class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    
+    <div class="mobile-menu">
+      <div class="container">
+        <a href="#" class="mobile-link">Home</a>
+        <a href="#doctors" class="mobile-link">Doctors</a>
+        <a href="#services" class="mobile-link">Services</a>
+        <a href="#" class="mobile-link">About</a>
+        <a href="#" class="mobile-link">Contact</a>
+        <div class="mobile-buttons">
+          <button class="btn btn-outline">Sign In</button>
+          <button class="btn btn-primary mobile-book-btn">Book Appointment</button>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    <meta property="og:title" content="HealthConnect - Doctor Appointment System" />
-    <meta property="og:description" content="Schedule appointments with top doctors and receive quality healthcare services when and where you need them." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Your Health Is Our <span>Priority</span></h1>
+        <p>Schedule appointments with top doctors and receive quality healthcare services when and where you need them.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary btn-lg" id="hero-book-btn">Book an Appointment</button>
+          <button class="btn btn-outline btn-lg" id="find-doctor-btn">Find a Doctor</button>
+        </div>
+        
+        <div class="hero-stats">
+          <div class="avatar-group">
+            <div class="avatar"></div>
+            <div class="avatar"></div>
+            <div class="avatar"></div>
+            <div class="avatar"></div>
+          </div>
+          <p><span>1000+</span> happy patients</p>
+        </div>
+      </div>
+      
+      <div class="hero-image">
+        <div class="image-container">
+          <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?q=80&w=1470&auto=format&fit=crop" alt="Doctor with patient">
+        </div>
+        <div class="rating-card">
+          <p class="rating-label">Average Rating</p>
+          <div class="rating-value">
+            <span>4.9</span>
+            <div class="stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+          <p class="rating-count">from 2,500+ reviews</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>We offer a comprehensive range of healthcare services to meet your needs</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <h3>Online Scheduling</h3>
+          <p>Schedule appointments 24/7 at your convenience. No waiting on hold or calling during office hours.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="23 7 16 12 23 17 23 7"></polygon>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+            </svg>
+          </div>
+          <h3>Video Consultation</h3>
+          <p>Connect with doctors from the comfort of your home through secure video consultations.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </div>
+          <h3>Phone Consultation</h3>
+          <p>Get medical advice or follow-up care through scheduled phone appointments.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h3>Doctor Chat</h3>
+          <p>Message your doctor directly with questions about your care or treatment.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h3>In-Person Visits</h3>
+          <p>Visit our modern facilities for physical examinations and specialized treatments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <!-- Doctors Section -->
+  <section id="doctors" class="doctors">
+    <div class="container">
+      <div class="section-header">
+        <h2>Find Doctors</h2>
+        <p>Search for the best doctors in your area and book appointments instantly</p>
+      </div>
+      
+      <div class="search-container">
+        <div class="search-form">
+          <div class="search-field">
+            <label>Specialty</label>
+            <select id="specialty-select">
+              <option value="all">All Specialties</option>
+              <option value="cardiology">Cardiology</option>
+              <option value="dermatology">Dermatology</option>
+              <option value="neurology">Neurology</option>
+              <option value="pediatrics">Pediatrics</option>
+              <option value="orthopedics">Orthopedics</option>
+              <option value="psychiatry">Psychiatry</option>
+            </select>
+          </div>
+          
+          <div class="search-field">
+            <label>Location</label>
+            <input type="text" id="location-input" placeholder="Enter location">
+          </div>
+          
+          <div class="search-field">
+            <label>Search</label>
+            <input type="text" id="search-query" placeholder="Search by name or specialty">
+          </div>
+          
+          <div class="search-button">
+            <button class="btn btn-primary" id="search-btn">Search Doctors</button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="doctors-grid" class="doctors-grid">
+        <!-- Doctor cards will be dynamically inserted here -->
+      </div>
+      
+      <div class="view-more">
+        <button class="btn btn-outline">View All Doctors</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Appointment Form Section -->
+  <section id="book-appointment" class="appointment">
+    <div class="container">
+      <div class="section-header">
+        <h2>Book an Appointment</h2>
+        <p>Schedule your visit with our healthcare professionals</p>
+      </div>
+      
+      <div class="appointment-form-container">
+        <form id="appointment-form" class="appointment-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="johndoe@example.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="appointment-specialty">Select Specialty</label>
+              <select id="appointment-specialty" name="specialty" required>
+                <option value="">Select specialty</option>
+                <option value="cardiology">Cardiology</option>
+                <option value="dermatology">Dermatology</option>
+                <option value="neurology">Neurology</option>
+                <option value="orthopedics">Orthopedics</option>
+                <option value="pediatrics">Pediatrics</option>
+                <option value="psychiatry">Psychiatry</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="doctor">Select Doctor</label>
+              <select id="doctor" name="doctor" required>
+                <option value="">Select specialty first</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="date">Preferred Date</label>
+              <input type="date" id="date" name="date" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="time">Preferred Time</label>
+              <select id="time" name="time" required>
+                <option value="">Select time</option>
+                <option value="09:00 AM">09:00 AM</option>
+                <option value="09:30 AM">09:30 AM</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="10:30 AM">10:30 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="11:30 AM">11:30 AM</option>
+                <option value="01:00 PM">01:00 PM</option>
+                <option value="01:30 PM">01:30 PM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="02:30 PM">02:30 PM</option>
+                <option value="03:00 PM">03:00 PM</option>
+                <option value="03:30 PM">03:30 PM</option>
+                <option value="04:00 PM">04:00 PM</option>
+                <option value="04:30 PM">04:30 PM</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="reason">Reason for Visit</label>
+            <textarea id="reason" name="reason" rows="3" placeholder="Please briefly describe your symptoms or reason for appointment"></textarea>
+          </div>
+          
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Schedule Appointment</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Our Patients Say</h2>
+        <p>Read testimonials from patients who have experienced our quality healthcare services</p>
+      </div>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHBvcnRyYWl0fGVufDB8fDB8fHww" alt="Jennifer Lewis">
+            </div>
+            <div class="testimonial-author">
+              <h4>Jennifer Lewis</h4>
+              <div class="testimonial-stars">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+              </div>
+            </div>
+          </div>
+          <p class="testimonial-text">"The online booking system saved me so much time. I was able to find a doctor and schedule an appointment in less than 5 minutes. The doctor was professional and addressed all my concerns."</p>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBvcnRyYWl0fGVufDB8fDB8fHww" alt="Robert Garcia">
+            </div>
+            <div class="testimonial-author">
+              <h4>Robert Garcia</h4>
+              <div class="testimonial-stars">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+              </div>
+            </div>
+          </div>
+          <p class="testimonial-text">"I was nervous about using telehealth, but my video consultation was excellent. The doctor was attentive and the follow-up was thorough. I'll definitely be using this service again."</p>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHBvcnRyYWl0fGVufDB8fDB8fHww" alt="Melissa Thompson">
+            </div>
+            <div class="testimonial-author">
+              <h4>Melissa Thompson</h4>
+              <div class="testimonial-stars">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+              </div>
+            </div>
+          </div>
+          <p class="testimonial-text">"As a busy parent, being able to schedule appointments online for my children has been life-changing. The pediatricians are knowledgeable and great with kids."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <span class="logo-icon">H</span>
+            <span class="logo-text">HealthConnect</span>
+          </div>
+          <p class="footer-description">
+            Making quality healthcare accessible to everyone through our innovative platform.
+          </p>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><span class="sr-only">Facebook</span></a>
+            <a href="#" class="social-icon"><span class="sr-only">Twitter</span></a>
+            <a href="#" class="social-icon"><span class="sr-only">Instagram</span></a>
+            <a href="#" class="social-icon"><span class="sr-only">LinkedIn</span></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Our Services</h3>
+          <ul class="footer-links">
+            <li><a href="#">Primary Care</a></li>
+            <li><a href="#">Specialized Care</a></li>
+            <li><a href="#">Telemedicine</a></li>
+            <li><a href="#">Preventive Care</a></li>
+            <li><a href="#">Mental Health</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3 class="footer-title">Newsletter</h3>
+          <p class="footer-description">
+            Subscribe to our newsletter for health tips and updates.
+          </p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" class="newsletter-input">
+            <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> HealthConnect. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container for Notifications -->
+  <div id="toast-container"></div>
+
+  <script src="script.js"></script>
+</body>
 </html>
